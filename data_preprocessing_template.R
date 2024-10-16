@@ -14,3 +14,7 @@ test_set = subset(dataset, split == FALSE)
 # Feature Scaling
 # training_set = scale(training_set)
 # test_set = scale(test_set)
+
+# Fitting linear regression
+regressor = lm(formula = Salary ~ YearsExperience,
+               data = training_set)
