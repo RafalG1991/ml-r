@@ -27,4 +27,6 @@ y_pred = predict(regressor, newdata = test_set)
 library(ggplot2)
 ggplot() + 
   geom_point(aes(x = training_set$YearsExperience, y = training_set$Salary),
-             color = 'red')
+             color = 'red') +
+  geom_line(aes(x = training_set$YearsExperience, y = predict(regressor, newdata = training_set)),
+            color = 'blue')
