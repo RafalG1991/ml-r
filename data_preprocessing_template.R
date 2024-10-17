@@ -33,3 +33,14 @@ ggplot() +
   ggtitle('Salary vs Experience (Training Set') +
   xlab('Years of experience') +
   ylab('Salary')
+
+# Visualising the test set results
+library(ggplot2)
+ggplot() + 
+  geom_point(aes(x = test_set$YearsExperience, y = test_set$Salary),
+             color = 'red') +
+  geom_line(aes(x = training_set$YearsExperience, y = predict(regressor, newdata = training_set)),
+            color = 'blue') +
+  ggtitle('Salary vs Experience (Test Set') +
+  xlab('Years of experience') +
+  ylab('Salary')
